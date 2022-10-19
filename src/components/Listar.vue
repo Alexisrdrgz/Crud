@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="card">
         <div class="card-header">
             Empleados
@@ -22,8 +22,11 @@
                         <td>{{empleado.nombre}}</td>
                         <td>{{empleado.correo}}</td>
                         <td>
-                            <a name="" id="" class="btn btn-primary" href="#" role="button">Editar</a>
-        <a name="" id="" class="btn btn-primary" href="#" role="button">Borrar</a>
+                            <div>
+                                <router-link :to="{name:'Editar',params:{id:empleado.id}}" class="btn btn-success">Editar</router-link>
+                                <a name="" id="" class="btn btn-danger" href="#" role="button" v-on:click="borrarEmpleado(empleado.id)">Borrar</a>
+
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -32,16 +35,7 @@
         </div>
        
     </div>
-
-
-    Vamos a Listar
     <div>
-        
-        <div></div>
-        <div></div>
-        <div></div>
-       
-
 
     </div>
 
@@ -76,6 +70,19 @@ export default {
                     this.empleados=datosRespuesta;
 
                 }
+
+            })
+            .catch(console.log)
+        },
+        borrarEmpleado(id){
+            console.log(id)
+
+            fetch('http://localhost/empleados/?borrar='+id)
+            .then(respuesta => respuesta.json())
+            .then((datosRespuesta)=>{
+                console.log(datosRespuesta)
+                
+             window.location.href="listar"
 
             })
             .catch(console.log)
