@@ -1,5 +1,7 @@
 <template>
-  <div class="container">
+    
+  <div class="container"><br/>
+   
     <div class="card">
         <div class="card-header">
             Empleados
@@ -11,8 +13,11 @@
                     <tr>
                         <th>ID:</th>
                         <th>Nombre:</th>
-                        <th>Correos</th>
-                        <th>Acciones</th>
+                        <th>correo</th>
+                        <th>edad</th>
+                        <th>Sexo</th>
+                        <th>Caso clinico</th>
+                        <th>accion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +26,11 @@
                         <td>{{empleado.id}}</td>
                         <td>{{empleado.nombre}}</td>
                         <td>{{empleado.correo}}</td>
+                        <td>{{empleado.edad}}</td>
+                        <td>{{empleado.sexo}}</td>
+                        <td>{{empleado.casoClinico}}</td>
+                       
+                        
                         <td>
                             <div>
                                 <router-link :to="{name:'Editar',params:{id:empleado.id}}" class="btn btn-success">Editar</router-link>
@@ -31,15 +41,10 @@
                     </tr>
                 </tbody>
             </table>
-
+            <router-link to="/crear" class="btn btn-success">Agregar nuevo paciente</router-link>
         </div>
        
     </div>
-    <div>
-
-    </div>
-
-
   </div>
 
 </template>
