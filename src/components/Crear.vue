@@ -2,7 +2,7 @@
     <navbar />
   <div class="container">
     <div class="card">
-      <div class="card-header">Agregar nuevos empleados</div>
+      <div class="card-header">Agregar nuevos pacientes</div>
       <div class="card-body">
         <!-- Aqui empieza el form -->
         <form v-on:submit.prevent="agregarRegistro" class="row g-3">
@@ -20,7 +20,7 @@
               placeholder="Nombre"
             />
             <small id="helpId" class="form-text text-muted"
-              >Escribe el nombre del empleado</small
+              >Escribe el nombre del paciente</small
             >
           </div>
 
@@ -39,7 +39,7 @@
               placeholder="correo"
             />
             <small id="helpId" class="form-text text-muted"
-              >Ingrese correo del empleado</small
+              >Ingrese correo del paciente</small
             >
           </div>
 
@@ -153,7 +153,7 @@ export default {
         .then((respuesta) => respuesta.json())
         .then((datosRespuesta) => {
           console.log(datosRespuesta);
-          window.location.href = "listar";
+         window.location.href = "listar";
         });
     },
   },

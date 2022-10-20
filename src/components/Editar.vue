@@ -7,10 +7,10 @@
         Editar empleados
       </div>
       <div class="card-body">
-        <form v-on:submit.prevent="actualizarRegistro" class="row g-3">
+        <form v-on:submit.prevent="actualizarRegistro">
 
           <div class="form-group">
-            <label for="nombre">Nombre:</label>
+            <label>Nombre:</label>
             <input type="text"
               class="form-control" required name="nombre" v-model = "empleado.nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre">
             <small id="helpId" class="form-text text-muted">Escribe el nombre del empleado</small>
@@ -19,7 +19,7 @@
 
           <div class="form-group">
             <div class="form-group">
-              <label for="">Correo:</label>
+              <label>Correo:</label>
               <input type="email"
                 class="form-control" required name="correo" v-model = "empleado.correo" id="correo" aria-describedby="helpId" placeholder="correo">
               <small id="helpId" class="form-text text-muted">Ingrese correo del empleado</small>
@@ -28,7 +28,7 @@
           <!-- edad -->
           <div class="col-md-6">
             <div class="form-group">
-              <label for="">Edad:</label>
+              <label>Edad:</label>
               <input
                 type="number"
                 class="form-control"
@@ -48,7 +48,7 @@
           <!-- sexo -->
           <div class="col-md-6">
             <div class="form-group">
-              <label for="">Sexo:</label>
+              <label>Sexo:</label>
               <input
                 type="text"
                 class="form-control"
@@ -104,56 +104,46 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
+import Navbar from './Navbar.vue';
 export default {
-  components: {
-    Navbar,
-  },
-  data(){
-    return{
-      empleado:{}
-    }
-  },
-  created:function(){
-
-  },
-  methods:{
-    obtenerInformacionID(){
-      
-            fetch('http://localhost/empleados/?consultar='+this.$route.params.id)
-            .then(respuesta => respuesta.json())
-            .then((datosRespuesta)=>{
-                console.log(datosRespuesta)
-
-                this.empleado=datosRespuesta[0];
-
-            })
-            .catch(console.log)
-        
+    data() {
+        return {
+            empleado: {}
+        };
     },
-    actualizarRegistro(){
-      var datosEnviar = {
-        nombre: this.empleado.nombre,
-        correo: this.empleado.correo,
-        edad: this.empleado.edad,
-        sexo:this.empleado.sexo,
-        casoClinico:this.empleado.casoClinico,
-      };
-      fetch('http://localhost/empleados/?actualizar=1'+this.$route.params.id,{
-
-        method:"POST",
-        body:JSON.stringify(datosEnviar)
-      })
-
-            .then(respuesta => respuesta.json())
-            .then((datosRespuesta=>{
-               console.log(datosRespuesta)
-               window.location.href='../listar'
-            }))
-    }
-
-  }
-
+    created: function () {
+    },
+    methods: {
+        obtenerInformacionID() {
+            fetch("http://localhost/empleados/?consultar=" + this.$route.params.id)
+                .then(respuesta => respuesta.json())
+                .then((datosRespuesta) => {
+                console.log(datosRespuesta);
+                this.empleado = datosRespuesta[0];
+            })
+                .catch(console.log);
+        },
+        actualizarRegistro() {
+            var datosEnviar = {
+                id:this.$route.params.id,
+                nombre: this.empleado.nombre,
+                correo: this.empleado.correo,
+                edad: this.empleado.edad,
+                sexo: this.empleado.sexo,
+                casoClinico: this.empleado.casoClinico,
+            };
+            fetch("http://localhost/empleados/?actualizar=1" + this.$route.params.id, {
+                method: "POST",
+                body: JSON.stringify(datosEnviar)
+            })
+                .then(respuesta => respuesta.json())
+                .then((datosRespuesta => {
+                console.log(datosRespuesta);
+                window.location.href = "../listar";
+            }));
+         }
+    },
+    components: { Navbar }
 }
 </script>
 
