@@ -1,4 +1,5 @@
 <template>
+    <navbar />
   <div class="container">
     <div class="card">
       <div class="card-header">Agregar nuevos empleados</div>
@@ -124,7 +125,11 @@
 </template>
 
 <script>
+import navbar from './Navbar.vue'
 export default {
+  components: {
+    navbar,
+  },
   data() {
     return {
       empleado: {},

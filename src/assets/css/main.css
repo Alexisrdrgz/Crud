@@ -1,62 +1,11 @@
-<template>
-<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
-
-				<!-- Header -->
-					<header id="header">
-       
-
-						<div class="container">
-              <h2>Login</h2>
-              <label for="">Usuario</label>
-              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-              <small id="helpId" class="text-muted">Help text</small>
-            </div>
-            
-					</header>
-
-				<!-- Footer -->
-					<footer id="footer">
-						
-					</footer>
-
-			</div>
-		</div>
- 
-  
-
-</template>
-
-<style>
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
-@import url("./assets/css/fontawesome-all.min.css");
+@import url("fontawesome-all.min.css");
 
 /*
 	Aerial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-#wrapper {
-		opacity: 1 !important;
-	}
-
-/* Overlay */
-
-	#overlay {
-		opacity: 1 !important;
-	}
-
-/* Header */
-
-	#header {
-		opacity: 1 !important;
-	}
-
-		#header nav li {
-			opacity: 1 !important;
-		}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -277,7 +226,7 @@ input, select, textarea {
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #348cb2 url("./assets/css/images/bg.jpg") bottom left;
+		background: #348cb2 url("images/bg.jpg") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -403,7 +352,7 @@ input, select, textarea {
 		-ms-animation: overlay 1.5s 1.5s forwards;
 		animation: overlay 1.5s 1.5s forwards;
 		background-attachment: fixed, fixed;
-		background-image: url("./assets/css/images/overlay-pattern.png"), url("./assets/css/images/overlay.svg");
+		background-image: url("images/overlay-pattern.png"), url("images/overlay.svg");
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
@@ -1130,5 +1079,3 @@ input, select, textarea {
 		#header nav {
 			padding: 0 1em;
 		} }
-
-</style>
