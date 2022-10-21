@@ -29,7 +29,7 @@
             Login
           </h3>
           <div class="container" style="max-width: 300px; padding-top: 50px">
-            <form>
+            <form v-on:submit.prevent="login">
               <label
                 for=""
                 style="
@@ -42,6 +42,8 @@
               >
               <div class="form-group" style="">
                 <input
+                v-model="this.usuario"
+                  name="login"
                   type="text"
                   class="form-control"
                   placeholder="Usuario"
@@ -61,17 +63,22 @@
                 >
 
                 <input
-                  type="text"
+                v-model="this.contrasena"
+                  name="login"
+                  type="password"
                   class="form-control"
-                  placeholder="Contraseña"
+                  placeholder="contrasena"
                   style="margin-bottom: 40px"
                 />
                 
               </div>
-              <button class="btn btn-primary">Iniciar Sesion</button>
+              <div>
+                <button class="boton" type="submit">Iniciar Sesion</button>
+              </div>
             </form>
-            
+          
           </div>
+          
         </div>
       </header>
       
@@ -86,11 +93,50 @@ window.onload = function () {
 window.ontouchmove = function () {
   return false;
 };
+window.onorientationchange = function () {
+  document.body.scrollTop = 0;
+};
+export default {
+  components:{
 
-export default {};
+  },
+  data(){
+    return {
+      usuario: "",
+      contrasena: "",
+      error: "false",
+      error_mg: "",
+    }
+  },
+  methods:{
+    login(){
+            if(this.usuario=='ebermudes' && this.contrasena=='doctor2016'){
+              window.location.href="crear"
+            }else{
+              alert("Contraseña y/o usuario incorrectos");
+            }
+        }
+  }
+};
 </script>
 
 <style>
+
+
+.boton{
+  border-radius: 35px;
+
+  color: #fff;
+  width:100%;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: linear-gradient(to right, #348AC7, #7474BF);  position: relative;
+  border: 3px solid #eee;
+  outline: 1px solid;
+  outline-color: rgba(49, 138, 172, 0.4);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
 .btn-dark-blue {
 width: 100%;
 border-radius: 20px;
@@ -140,6 +186,11 @@ q:before,
 q:after {
   content: "";
   content: none;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  font-family: inherit;
 }
 
 mark {
@@ -291,31 +342,6 @@ body {
   /* Set your background with this */
 
   background: #348cb2 url("../assets/css/images/bg.jpg") bottom left;
-  background-repeat: repeat-x;
-  height: 100%;
-  left: 0;
-  opacity: 1;
-  position: fixed;
-  top: 0;
-}
-
-
-#bg2 {
-  -moz-animation: bg 60s linear infinite;
-  -webkit-animation: bg 60s linear infinite;
-  -ms-animation: bg 60s linear infinite;
-  animation: bg 60s linear infinite;
-  -moz-backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  /* Set your background with this */
-
-  background: #348cb2 url("../assets/logo1.png") bottom left;
   background-repeat: repeat-x;
   height: 100%;
   left: 0;

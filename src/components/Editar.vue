@@ -2,7 +2,7 @@
  <Navbar />
    
 <div class="container">
-    <div class="card"  style="background-color:transparent">
+    <div class="card">
       <div class="card-header">
         Editar empleados
       </div>
@@ -95,9 +95,7 @@
           </div>
         </form>
       </div>
-      <div >
-    <img src="../assets/logo1.png" alt="" style="margin-top:-750px; opacity: 0.04;z-index: -10;position:absolute"/>
-    </div>
+      
     </div>
 
 
@@ -135,7 +133,6 @@ export default {
     },
     actualizarRegistro(){
       var datosEnviar = {
-        id:this.$route.params.id ,
         nombre: this.empleado.nombre,
         correo: this.empleado.correo,
         edad: this.empleado.edad,
