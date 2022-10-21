@@ -133,6 +133,7 @@ export default {
     },
     actualizarRegistro(){
       var datosEnviar = {
+        id: this.$route.params.id,
         nombre: this.empleado.nombre,
         correo: this.empleado.correo,
         edad: this.empleado.edad,
