@@ -65,7 +65,7 @@
                 <input
                 v-model="this.contrasena"
                   name="login"
-                  type="text"
+                  type="password"
                   class="form-control"
                   placeholder="contrasena"
                   style="margin-bottom: 40px"
@@ -110,8 +110,12 @@ export default {
   },
   methods:{
     login(){
-      console.log(this.usuario)
-    }
+            if(this.usuario=='ebermudes' && this.contrasena=='doctor2016'){
+              window.location.href="crear"
+            }else{
+              alert("Contraseña y/o usuario incorrectos");
+            }
+        }
   }
 };
 </script>
