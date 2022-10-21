@@ -4,8 +4,8 @@
   <div class="container"><br/>
    
     <div class="card">
-        <div class="card-header">
-            Empleados
+        <div class="card-header" style="color:black">
+            Pacientes
         </div>
         <div class="card-body">
           

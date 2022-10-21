@@ -2,7 +2,7 @@
     <navbar />
   <div class="container">
     <div class="card">
-      <div class="card-header">Agregar nuevos empleados</div>
+      <div class="card-header" style="color:black">Agregar nuevos pacientes</div>
       <div class="card-body">
         <!-- Aqui empieza el form -->
         <form v-on:submit.prevent="agregarRegistro" class="row g-3">
