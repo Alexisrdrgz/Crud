@@ -29,7 +29,7 @@
             Login
           </h3>
           <div class="container" style="max-width: 300px; padding-top: 50px">
-            <form>
+            <form v-on:submit.prevent="login">
               <label
                 for=""
                 style="
@@ -42,6 +42,8 @@
               >
               <div class="form-group" style="">
                 <input
+                v-model="this.usuario"
+                  name="login"
                   type="text"
                   class="form-control"
                   placeholder="Usuario"
@@ -61,17 +63,22 @@
                 >
 
                 <input
+                v-model="this.contrasena"
+                  name="login"
                   type="text"
                   class="form-control"
-                  placeholder="Contraseña"
+                  placeholder="contrasena"
                   style="margin-bottom: 40px"
                 />
                 
               </div>
-              
+              <div>
+                <button class="boton" type="submit">Iniciar Sesion</button>
+              </div>
             </form>
-            
+          
           </div>
+          
         </div>
       </header>
       
@@ -89,10 +96,43 @@ window.ontouchmove = function () {
 window.onorientationchange = function () {
   document.body.scrollTop = 0;
 };
-export default {};
+export default {
+  components:{
+
+  },
+  data(){
+    return {
+      usuario: "",
+      contrasena: "",
+      error: "false",
+      error_mg: "",
+    }
+  },
+  methods:{
+    login(){
+      console.log(this.usuario)
+    }
+  }
+};
 </script>
 
 <style>
+
+
+.boton{
+  border-radius: 35px;
+
+  color: #fff;
+  width:100%;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: linear-gradient(to right, #348AC7, #7474BF);  position: relative;
+  border: 3px solid #eee;
+  outline: 1px solid;
+  outline-color: rgba(49, 138, 172, 0.4);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
 .btn-dark-blue {
 width: 100%;
 border-radius: 20px;
