@@ -3,9 +3,9 @@
     
   <div class="container"><br/>
    
-    <div class="card">
-        <div class="card-header">
-            Empleados
+    <div class="card" style="background-color:transparent">
+        <div class="card-header" style="color:black">
+            Pacientes
         </div>
         <div class="card-body">
           
@@ -45,6 +45,9 @@
             <router-link to="/crear" class="btn btn-success">Agregar nuevo paciente</router-link>
         </div>
        
+    </div>
+    <div >
+    <img src="../assets/logo1.png" alt="" style="margin-top:-500px; opacity: 0.04;z-index: -10;position:absolute"/>
     </div>
   </div>
 

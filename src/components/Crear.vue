@@ -1,14 +1,14 @@
 <template>
     <navbar />
   <div class="container">
-    <div class="card">
-      <div class="card-header">Agregar nuevos empleados</div>
+    <div class="card" style="background-color:transparent">
+      <div class="card-header" style="color:black">Agregar nuevos pacientes</div>
       <div class="card-body">
         <!-- Aqui empieza el form -->
-        <form v-on:submit.prevent="agregarRegistro" class="row g-3">
+        <form v-on:submit.prevent="agregarRegistro" class="row g-3" >
           <!-- Nombre -->
           <div class="col-md-6">
-            <label for="nombre">Nombre:</label>
+            <label for="nombre" style="color:black">Nombre:</label>
             <input
               type="text"
               class="form-control"
@@ -17,7 +17,7 @@
               v-model="empleado.nombre"
               id="nombre"
               aria-describedby="helpId"
-              placeholder="Nombre"
+              placeholder="nombre"
             />
             <small id="helpId" class="form-text text-muted"
               >Escribe el nombre del empleado</small
@@ -27,7 +27,7 @@
           <!-- Email -->
 
           <div class="col-md-6">
-            <label for="">Correo:</label>
+            <label for="" style="color:black">Correo:</label>
             <input
               type="email"
               class="form-control"
@@ -46,7 +46,7 @@
           <!-- edad -->
           <div class="col-md-6">
             <div class="form-group">
-              <label for="">Edad:</label>
+              <label for="" style="color:black">Edad:</label>
               <input
                 type="number"
                 class="form-control"
@@ -66,7 +66,7 @@
           <!-- sexo -->
           <div class="col-md-6">
             <div class="form-group">
-              <label for="">Sexo:</label>
+              <label for="" style="color:black">Sexo:</label>
               <input
                 type="text"
                 class="form-control"
@@ -86,7 +86,7 @@
 
           <div class="form-group">
             <div class="form-group">
-              <label>Caso Clinico:</label>
+              <label style="color:black">Caso Clinico:</label>
               <textarea
                 type="text"
                 class="form-control"
@@ -118,10 +118,16 @@
               >Cancelar</router-link
             >
           </div>
+         
         </form>
+        
       </div>
     </div>
+    <div >
+    <img src="../assets/logo1.png" alt="" style="margin-top:-600px; opacity: 0.04;z-index: -10;position:absolute"/>
+    </div>
   </div>
+  
 </template>
 
 <script>
