@@ -29,7 +29,7 @@
                         <td>{{empleado.correo}}</td>
                         <td>{{empleado.edad}}</td>
                         <td>{{empleado.sexo}}</td>
-                        <td>{{empleado.casoClinico}}</td>
+                        <td><button class="btn btn-primary"><router-link to="/historial" class="nav-link" style="color: white;">Ver caso clinico</router-link></button></td>
                        
                         
                         <td>
